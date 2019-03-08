@@ -7,6 +7,9 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
 
+# Install oh-my-sh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 function doIt() {
 	rsync --exclude ".git/" \
 		--exclude ".DS_Store" \

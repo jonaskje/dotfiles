@@ -5,7 +5,7 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin master;
+#git pull origin master;
 
 # Install oh-my-sh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

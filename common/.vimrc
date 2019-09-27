@@ -5,6 +5,9 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'https://git.danielmoch.com/vim-makejob.git'
 call plug#end()
 
 language C
@@ -29,9 +32,9 @@ syntax on
 " Allow cursor one char after last character on line
 set virtualedit=onemore
 
-setlocal tabstop=4
-setlocal softtabstop=4
-setlocal shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " > rust.vim
 let g:autofmt_autosave = 1
@@ -73,12 +76,18 @@ endif
 :autocmd InsertEnter * set nocul
 :autocmd InsertLeave * set cul
 
-au! BufWritePost ~\.vimrc source %
 
 " This will automatically open/close the quick fix window if there are build
 " errors
 "autocmd QuickFixCmdPost [^l]* nested copen
 autocmd QuickFixCmdPost [^l]* nested cw
 autocmd QuickFixCmdPost    l* nested lwindow
+
+
+nmap <M-O> :GFiles<cr>
+
+
+set makeprg=d:\\c\\UnrealEngine-Angelscript2\\Engine\\Build\\BatchFiles\\Build.bat\ -Target=\"ShaderCompileWorker\ Win64\ Development\"\ -Target=\"UE4Editor\ Win64\ Development\"\ -WaitMutex\ -FromMsBuild
+
 
 
